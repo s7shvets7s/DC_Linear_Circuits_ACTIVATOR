@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.10)
+project(Activator)
+
+set(CMAKE_CXX_STANDARD 17)
+
+
+add_executable(activator src/main.cpp)
+
+
+target_link_libraries(activator wininet)
+
+if(MINGW)
+    target_link_options(activator PRIVATE -static)
+endif()
